@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="/static/abc.png" type="image/x-icon">
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alkatra:wght@600&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    {%load static %}
+    <link
+      href="{% static 'searchbox.css' %}"
+      type="text/css"
+      rel="Stylesheet"
+    />
+    <title>Search Flight</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="s1">
+        {% load static %}
+        <img src="/static/abc.png" />
+      </div>
+      <div class="s2">
+        <a href="/flights/">
+          <button class="p1">Flights</button>
+        </a>
+        <a href="/flights/bookings/">
+          <button class="p2">Your Bookings</button>
+        </a>
+        <a href="/flights/sms/">
+          <button class="p3">SMS Sent</button>
+        </a>
+        <a href="/flights/email/">
+          <button class="p4">Mails Sent</button>
+        </a>
+      </div>
+      <a href="/users/login/" class="hey">
+        <button class="s3">Logout</button>
+      </a>
+    </div>
+    <div class="searchbox">
+      <div class="headg">Search</div>
+      <form action="/flights/" method="get">
+        <div class="search">
+          <div class="search1">
+            <div class="source">
+              <label for="source">Source</label>
+              <input type="text" name="source" id="source" />
+            </div>
+          </div>
+
+          <div class="destination">
+            <label for="destination">Destination</label>
+            <input type="text" name="destination" id="destination" />
+          </div>
+          <div class="search2">
+            <div class="date">
+              <label for="date">Date</label>
+              <input type="date" name="date" id="date" />
+            </div>
+            <div class="searchbutton">
+              <center><input type="submit" value="Search" /></center>
+            </div>
+          </div>
+          <div class="search2">
+            {% comment %}
+            <div class="date">
+              <label for="date">Date</label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                placeholder="enter the date of travel"
+              />
+            </div>
+            {% endcomment %} {% comment %}
+          </div>
+          <div class="search3">
+            <div class="destination">
+              <label for="destination">Destination</label>
+              <input
+                type="text"
+                name="destination"
+                id="source"
+                placeholder="enter the destination"
+              />
+            </div>
+          </div>
+          <div class="searchbutton">
+            <center><input type="submit" value="Search" /></center>
+          </div>
+        </div>
+      </form>
+    </div>
+    {% endcomment %}
+    <!-- {% for flight in data %}
+    <form method="get" action="seats/">
+      <input type="hidden" name="flight_id" value="{{flight.id}}" />
+      <div class="flightbox">
+        <div class="box1">{{flight.name}}</div>
+        <div class="box2">
+          <div class="side1">
+            <div class="time">{{flight.start_time}}</div>
+            <div class="destination">{{flight.source}}</div>
+          </div>
+          <div class="side2div>
+          <div class="side3">
+            <div class="end_time">{{flight.end_time}}</div>
+            <div class="destination">{{flight.destination}}</div>
+          </div>
+        </div>
+        <div class="box3">&#8377;{{flight.price}}</div>
+        <div class="box4">
+          <input type="submit" value="Book Seats" />
+        </div>
+      </div>
+    </form>
+    {% endfor %} -->
+  </body>
+</html>

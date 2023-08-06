@@ -1,0 +1,1 @@
+from flights.models import Passenger

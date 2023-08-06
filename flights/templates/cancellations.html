@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="/static/abc.png" type="image/x-icon">
+    {% load static %}
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    {% load static %}
+    <link href="{% static 'cancel.css' %}" type="text/css" rel="Stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alkatra:wght@600&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Cancel Flight</title>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="s1">
+        {% load static %}
+        <img src="/static/abc.png" />
+      </div>
+      <div class="s2">
+        <a href="/flights/">
+          <button class="p1" >Flights</button>
+        </a>
+        <a href="/flights/bookings/">
+          <button class="p2">Your Bookings</button>
+        </a>
+        <a href="/flights/sms/">
+          <button class="p3">SMS Sent</button>
+        </a>
+        <a href="/flights/email/">
+          <button class="p4">Mails Sent</button>
+        </a>
+      </div>
+      <a href="/users/login/" class="hey">
+      <button class="s3">Logout</button>
+      </a>
+    </div>
+    <div class="majordiv">
+      <div class="heads">Cancellations By You</div>
+      <div class="otherdata">
+        {% for cancellation in data %}
+        <h5 class="vbook">
+          {{ cancellation.seat }}--{{ cancellation.flight }}
+        </h5>
+        <h6>{{cancellation.reason}}</h6>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/htm/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
